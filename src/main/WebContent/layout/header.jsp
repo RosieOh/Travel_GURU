@@ -20,7 +20,6 @@
 				</c:when>
 				<c:otherwise>
 					<li class="menu_list"><a href="${pageContext.request.contextPath}/signin/signin.jsp">개인 로그인</a></li>
-					<li class="menu_list"><a href="${pageContext.request.contextPath}/signin/signin.jsp">관리자 로그인</a></li>
 					<li class="menu_list"><a href="${pageContext.request.contextPath}/signup/signup.jsp">회원가입</a></li>
 				</c:otherwise>
 			</c:choose>
