@@ -14,7 +14,6 @@ public class SQL_Connect {
 		try {
 			Class.forName(JDBC_DRIVER);
 			conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PW);
-			System.out.println("DB연결 성공");
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("DB연결 실패: " + e);

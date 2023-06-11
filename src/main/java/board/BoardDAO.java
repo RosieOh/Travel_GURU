@@ -27,6 +27,47 @@ public class BoardDAO {
 		}
 		return -1;
 	}
+	
+	public int rmvBoard(int boardId) {
+		Connection conn = SQL_Connect.open();
+		
+		String sql = "UPDATE board SET isdeleted = true, deletedate = CURRENT_TIMESTAMP WHERE id = ?";
+		
+		PreparedStatement pstmt = null;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, boardId);
+			return pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			SQL_Connect.close(conn, pstmt);
+		}
+		return -1;
+	}
+	
+	public int updateBoard(int boardId, String title, String content) {
+		Connection conn = SQL_Connect.open();
+		
+		String sql = "UPDATE board SET title = ?, content = ? , updatedate = CURRENT_TIMESTAMP WHERE id = ?";
+		
+		PreparedStatement pstmt = null;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, title);
+			pstmt.setString(2, content);
+			pstmt.setInt(3, boardId);
+			return pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			SQL_Connect.close(conn, pstmt);
+		}
+		return -1;
+	}
+	
 	public List<BoardDTO> findAll() {
 		Connection conn = SQL_Connect.open();
 
@@ -45,7 +86,7 @@ public class BoardDAO {
 			while (rs.next()) {
 				BoardDTO board = BoardDTO.builder()
 						.id(rs.getInt("id"))
-						.user_id(rs.getString("name"))
+						.user_id(rs.getString("user_id"))
 						.user_name(rs.getString("name"))
 						.title(rs.getString("title"))
 						.content(rs.getString("content"))
@@ -83,7 +124,7 @@ public class BoardDAO {
 			while (rs.next()) {
 				BoardDTO board = BoardDTO.builder()
 						.id(rs.getInt("id"))
-						.user_id(rs.getString("name"))
+						.user_id(rs.getString("user_id"))
 						.user_name(rs.getString("name"))
 						.title(rs.getString("title"))
 						.content(rs.getString("content"))
@@ -119,7 +160,7 @@ public class BoardDAO {
 			if (rs.next()) {
 				BoardDTO board = BoardDTO.builder()
 						.id(rs.getInt("id"))
-						.user_id(rs.getString("name"))
+						.user_id(rs.getString("user_id"))
 						.user_name(rs.getString("name"))
 						.title(rs.getString("title"))
 						.content(rs.getString("content"))
@@ -139,7 +180,7 @@ public class BoardDAO {
 	public int countAll() {
 		Connection conn = SQL_Connect.open();
 		
-		String sql = "SELECT COUNT(*)FROM board";
+		String sql = "SELECT COUNT(*)FROM board WHERE isdeleted = false";
 		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;

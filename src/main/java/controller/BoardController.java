@@ -43,6 +43,8 @@ public class BoardController extends HttpServlet {
 		RequestDispatcher dis;
 		
 		BoardDTO board;
+		int board_id;
+		int result;
 		
 		switch(cmd) {
 			case "insert":
@@ -51,7 +53,7 @@ public class BoardController extends HttpServlet {
 										.title(request.getParameter("title"))
 										.content(request.getParameter("content"))
 										.build();
-				int result = boardDAO.insert(board);
+				result = boardDAO.insert(board);
 				
 				if (result == 1) {
 					dis = request.getRequestDispatcher("/board?cmd=list");
@@ -81,7 +83,7 @@ public class BoardController extends HttpServlet {
 				dis.forward(request, response);
 				break;
 			case "view":
-				int board_id = Integer.parseInt(request.getParameter("board_id"));
+				board_id = Integer.parseInt(request.getParameter("board_id"));
 				boardDAO.viewUpdate(board_id);
 				board = boardDAO.findById(board_id);
 				
@@ -89,6 +91,39 @@ public class BoardController extends HttpServlet {
 				
 				dis = request.getRequestDispatcher("/Consumer/ConsumerView.jsp");
 				dis.forward(request, response);
+				break;
+			case "delete":
+				board_id = Integer.parseInt(request.getParameter("board_id"));
+				result = boardDAO.rmvBoard(board_id);
+				
+				if (result == 1) {
+					dis = request.getRequestDispatcher("/board?cmd=list");
+					dis.forward(request, response);
+				} else {
+					Script.back(response, "삭제 실패");
+				}
+				break;
+			case "rewriteStart":
+				board_id = Integer.parseInt(request.getParameter("board_id"));
+				board = boardDAO.findById(board_id);
+				
+				request.setAttribute("board", board);
+				
+				dis = request.getRequestDispatcher("/Consumer/ConsumerAsk.jsp");
+				dis.forward(request, response);
+				break;
+			case "rewriteEnd":
+				String title = request.getParameter("title");
+				String content = request.getParameter("content");
+				board_id = Integer.parseInt(request.getParameter("board_id"));
+				result = boardDAO.updateBoard(board_id, title, content);
+				
+				if (result == 1) {
+					dis = request.getRequestDispatcher("/board?cmd=list");
+					dis.forward(request, response);
+				} else {
+					Script.back(response, "수정 실패");
+				}
 				break;
 		}
 	}

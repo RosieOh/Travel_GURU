@@ -82,7 +82,6 @@ public class CartController extends HttpServlet {
 				
 				user_id = ((UserDTO)session.getAttribute("principal")).getId();
 				List<CartDTO> cartList = cartDAO.findById(user_id);
-				System.out.println(user_id);
 				request.setAttribute("cartList", cartList);
 				
 				dis = request.getRequestDispatcher("/productCart/productcart.jsp");

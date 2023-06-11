@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -60,7 +61,16 @@
 				</div>
 			</div>
 			<div class="bt_wrap">
-				<a href="${pageContext.request.contextPath}/board?cmd=list" class="on">목록</a> <a href="ConsumerAsk.jsp">수정</a>
+				<a href="${pageContext.request.contextPath}/board?cmd=list" class="on">목록</a>
+				<c:choose>
+					<c:when test="${sessionScope.principal.id == board.user_id}">
+						<a href="${pageContext.request.contextPath}/board?cmd=rewriteStart&board_id=${board.id}">수정</a>
+						<a href="${pageContext.request.contextPath}/board?cmd=delete&board_id=${board.id}">삭제</a>
+					</c:when>
+					<c:when test="${sessionScope.principal.auth == 'admin'}">
+						<a href="${pageContext.request.contextPath}/board?cmd=delete&board_id=${board.id}">삭제</a>
+					</c:when>
+				</c:choose>
 			</div>
 		</div>
 	</div>

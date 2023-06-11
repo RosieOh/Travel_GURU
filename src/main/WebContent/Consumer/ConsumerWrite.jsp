@@ -46,6 +46,7 @@
 						</dl>
 					</div>
 					<div class="info">
+					<%--
 						<dl>
 							<dt>글쓴이</dt>
 							<dd>
@@ -58,13 +59,14 @@
 								<input type="password" placeholder="비밀번호 입력">
 							</dd>
 						</dl>
+					--%>
 					</div>
 					<div class="cont">
 						<textarea name="content" placeholder="내용 입력"></textarea>
 					</div>
 				</div>
 				<div class="bt_wrap">
-					<a href="${pageContext.request.contextPath}/board?cmd=list" class="on">등록</a> <a href="ConsumerList.jsp">취소</a>
+					<a href="javascript:board_write.submit()" class="on">등록</a> <a href="${pageContext.request.contextPath}/board?cmd=list">취소</a>
 				</div>
 			</form>
 		</div>
