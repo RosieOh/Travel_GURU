@@ -77,7 +77,7 @@ ALTER TABLE comment ADD FOREIGN KEY (user_id) REFERENCES users(id);
 ALTER TABLE comment ADD FOREIGN KEY (bbs_id) REFERENCES bbs(id);
 ```
 
-## 상품 내용
+## DB 내용
 ```
 INSERT INTO product(name, price, category, summary, content, imgurl_1) VALUES('대만(taiwan)', 380000, '아시아', '~4박 5일~ 대만 투어 타이베이/전세기출발/인천', 'null', '/images/product/taiwan.jpg');
 INSERT INTO product(name, price, category, summary, content, imgurl_1) VALUES('베트남(vietnam)', 570000, '아시아', '~5박 6일~ 베트남 투어 하노이/나트랑', 'null', '/images/product/vietnam.jpg');
@@ -105,4 +105,25 @@ INSERT INTO product(name, price, category, summary, content, imgurl_1) VALUES('�
 INSERT INTO product(name, price, category, summary, content, imgurl_1) VALUES('피지(Fiji)', 1200000, '오세아니아', '~6박 7일~ 남태평양 아름다운 휴양섬 피지. 남국의 여유로움과 에메랄드빛 바다를 즐겨라!', 'null', '/images/product/fiji.jpg');
 INSERT INTO product(name, price, category, summary, content, imgurl_1) VALUES('뉴질랜드(Newzealand)', 1800000, '오세아니아', '~7박 8일~ 태고의 섬 뉴질랜드, 숨막히는 자연의 아름다움과 화려한 도시를 함께 즐기자', 'null', '/images/product/newzealand.jpg');
 INSERT INTO product(name, price, category, summary, content, imgurl_1) VALUES('뉴질랜드 북섬(Newzealandnorth)', 1400000, '오세아니아', '~5박 6일~ 특가! 뉴질랜드 북섬만을 즐겨보자. 웅장한 자연을 즐기고 싶은 당신에게', 'null', '/images/product/newzealandnorth.jpg');
+
+INSERT INTO users(id, password, name, email, phone, address, auth) VALUES('admin', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', '관리자', 'admin@guru.com', '01012345678', '머전팡역시', 'admin');
+INSERT INTO users(id, password, name, email, phone, address, auth) VALUES('parkjh', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', '박종현', 'parkjh@guru.com', '01012345678', '머전팡역시', 'user');
+INSERT INTO users(id, password, name, email, phone, address, auth) VALUES('leeks', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', '이규석', 'leeks@guru.com', '01012345678', '머전팡역시', 'user');
+INSERT INTO users(id, password, name, email, phone, address, auth) VALUES('kimmk', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', '김민규', 'kimmk@guru.com', '01012345678', '머전팡역시', 'user');
+
+INSERT INTO board(user_id, title, content) VALUES('parkjh', '테스트 글입니다 1', '테스트 내용입니다 1');
+INSERT INTO board(user_id, title, content) VALUES('leeks', '테스트 글입니다 2', '테스트 내용입니다 2');
+INSERT INTO board(user_id, title, content) VALUES('kimmk', '테스트 글입니다 3', '테스트 내용입니다 3');
+INSERT INTO board(user_id, title, content) VALUES('parkjh', '테스트 글입니다 4', '테스트 내용입니다 4');
+INSERT INTO board(user_id, title, content) VALUES('leeks', '테스트 글입니다 5', '테스트 내용입니다 5');
+INSERT INTO board(user_id, title, content) VALUES('kimmk', '테스트 글입니다 6', '테스트 내용입니다 6');
+INSERT INTO board(user_id, title, content) VALUES('parkjh', '테스트 글입니다 7', '테스트 내용입니다 7');
+INSERT INTO board(user_id, title, content) VALUES('leeks', '테스트 글입니다 8', '테스트 내용입니다 8');
+INSERT INTO board(user_id, title, content) VALUES('kimmk', '테스트 글입니다 9', '테스트 내용입니다 9');
+INSERT INTO board(user_id, title, content) VALUES('parkjh', '테스트 글입니다 10', '테스트 내용입니다 10');
+INSERT INTO board(user_id, title, content) VALUES('leeks', '테스트 글입니다 11', '테스트 내용입니다 11');
+INSERT INTO board(user_id, title, content) VALUES('kimmk', '테스트 글입니다 12', '테스트 내용입니다 12');
+INSERT INTO board(user_id, title, content) VALUES('parkjh', '테스트 글입니다 13', '테스트 내용입니다 13');
+INSERT INTO board(user_id, title, content) VALUES('leeks', '테스트 글입니다 14', '테스트 내용입니다 14');
+INSERT INTO board(user_id, title, content) VALUES('kimmk', '테스트 글입니다 15', '테스트 내용입니다 15');
 ```
