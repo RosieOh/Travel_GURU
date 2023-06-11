@@ -27,6 +27,9 @@
             <span>고객센터 : 080-1234-5678</span>
           </li>
           <li>
+          	<span>책임담당자 : 오태훈 김현 홍주혁</span>
+          </li>
+          <li>
             <span>COPYRIGHT ⓒ Travel_GURU COMPANY. ALL RIGHTS RESERVED.</span>
           </li>
         </ul>
@@ -40,16 +43,9 @@
           </div>
           <select>
             <option value="">Family Site</option>
-            <option value="현대자동차그룹">현대자동차그룹</option>
-            <option value="제네시스 공식 웹사이트">제네시스 공식 웹사이트</option>
-            <option value="현대 컬렉션 온라인 샵">현대 컬렉션 온라인 샵</option>
-            <option value="키즈현대">키즈현대</option>
-            <option value="동반성장 사이트">동반성장 사이트</option>
-            <option value="글로벌경영연구소">글로벌경영연구소</option>
-            <option value="전북 현대모터스 축구단">전북 현대모터스 축구단</option>
-            <option value="고객소통채널 H-ear">고객소통채널 H-ear</option>
-            <option value="현대 드라이빙 아카데미">현대 드라이빙 아카데미</option>
-            <option value="N 브랜드">N 브랜드</option>
+            <option value="오태훈 GitHub"><a href="https://github.com/RosieOh">오태훈 GitHub</a></option>
+            <option value="김현 GitHub"><a href="https://github.com/RealHatawa">김현 GitHub</a></option>
+            <option value="홍주혁 GitHub"><a href="https://github.com/Juhyukhhh">홍주혁 GitHub</a></option>
           </select>
         </div>
       </div>
@@ -70,7 +66,7 @@
           </li>
           <li>
             <img src="${pageContext.request.contextPath}/images/footer_logo/footer-mark07.png" alt="로고">
-            <span>2020년 한국산업의 고객만족도 (KCSI) 일반승용차 부문 27년 연속 1위 RV승용차 부문 17년 연속 1위</span>
+            <span>2020년 한국산업의 고객만족도 (KCSI) 여행 부문 27년 연속 1위</span>
           </li>
         </ul>
       </div>

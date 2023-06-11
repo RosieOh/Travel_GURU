@@ -44,16 +44,16 @@
 				<div class="login-form-left-side">
 					<div class="login-top-wrap">
 						<span>계정이 없으신가요?</span>
-						<button class="create-account-btn shadow-light">계정 생성</button>
+						<button class="create-account-btn shadow-light"><a href="../signup/signup.jsp">계정 생성</a></button>
 					</div>
 					<div class="login-input-container">
 						<div class="login-input-wrap input-id">
-							<i class="far fa-envelope"></i>
-							<input name="id" placeholder="아이디를 입력해주세요" type="text" required>
+							<i class="far fa-envelope"></i> <input name="id"
+								placeholder="아이디를 입력해주세요" type="text" required>
 						</div>
 						<div class="login-input-wrap input-password">
-							<i class="fas fa-key"></i>
-							<input name="password" placeholder="비밀번호를 입력해주세요" type="password" required>
+							<i class="fas fa-key"></i> <input name="password"
+								placeholder="비밀번호를 입력해주세요" type="password" required>
 						</div>
 					</div>
 					<div class="login-btn-wrap">
@@ -64,7 +64,6 @@
 			</div>
 		</form>
 	</div>
-	<jsp:include
-		page="../layout/footer.jsp" />
+	<jsp:include page="../layout/footer.jsp" />
 </body>
 </html>
