@@ -128,24 +128,12 @@
 	left: 0;
 	width: 90%;
 	height: 90%;
-	background-image: url(./img/01-01.jpg);
+	background-image: url(./img/first_1.png);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 }
 
-.sub01_icon {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	width: 31.66666666%;
-	height: 41.083333%;
-	padding: 40px 15px;
-	background-color: #615025;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
 
 @media ( max-width :950px) {
 	.sub01_pt.pt_lt {
@@ -315,7 +303,7 @@
 	max-width: 710px;
 	width: 100%;
 	height: 390px;
-	background-image: url(./img/03-01.jpg);
+	background-image: url(./img/third_1.png);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
