@@ -57,7 +57,7 @@
 				<%
 				int index = (int)request.getAttribute("index");
 				int boardCnt = (int)request.getAttribute("boardCnt");
-				int indexMax = boardCnt/5+1;
+				int indexMax = (boardCnt-1)/5+1;
 				%>
 				<a href="${pageContext.request.contextPath}/board?cmd=list&index=1" class="bt first">&lt;&lt;</a>
 				<a href="${pageContext.request.contextPath}/board?cmd=list&index=<%=Math.max(1, index-1)%>" class="bt prev">&lt;</a>

@@ -31,7 +31,7 @@
 		<div class="inner">
 			<div class="container">
         <h2>회원가입을 환영합니다!</h2>
-        <form name="joinForm" onsubmit="return join()">
+        <form name="joinForm">
             <div class="form-group">
                 <label for="username">아이디</label>
                 <input type="text" id="username" name="id" placeholder="아이디를 입력하세요" required>
@@ -64,7 +64,7 @@
                 <label for="address">주소</label>
                 <input type="text" id="address" name="address" placeholder="주소를 입력하세요" required>
             </div>
-            <button type="submit">가입하기</button>
+            <button type="button" onclick="join()">가입</button>
         </form>
     </div>
 			
@@ -79,8 +79,6 @@
 		var pwd = joinForm.password.value;
 		var pwd2 = joinForm.password2.value;
 		
-		console.log(joinForm.idDuplication.value);
-		
 		if (joinForm.idDuplication.value != "idCheck") {
 			alert("아이디 중복체크를 해주세요");
 		}
@@ -91,6 +89,7 @@
 		else {		
 			joinForm.method = "post";
 			joinForm.action = "../user?cmd=join";
+			joinForm.submit();
 		}
 	}
 	
