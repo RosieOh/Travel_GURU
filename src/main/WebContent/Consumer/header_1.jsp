@@ -36,7 +36,7 @@
 		</ul>
 		<div class="header_list">
 			<a href="/Web_Server_Programming_final"> <img class="header_logo"
-				src="${pageContext.request.contextPath}/images/header_logo/logo_1.png" alt="logo" />
+				src="${pageContext.request.contextPath}/images/header_logo/logo_header_1.png" alt="logo" />
 			</a>
 			<ul>
 				<li><a href="${pageContext.request.contextPath}/product?cmd=info">여행코스</a></li>
