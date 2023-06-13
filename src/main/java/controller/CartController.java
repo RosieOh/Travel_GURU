@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -85,6 +86,16 @@ public class CartController extends HttpServlet {
 				request.setAttribute("cartList", cartList);
 				
 				dis = request.getRequestDispatcher("/productCart/productcart.jsp");
+				dis.forward(request, response);
+				break;
+			case "delete":
+				String[] cart_ids = request.getParameterValues("delcheckbox");
+				if (cart_ids != null) {					
+						for(String cart_id: cart_ids) {
+							cartDAO.rmvCart(Integer.parseInt(cart_id));
+						}
+				}
+				dis = request.getRequestDispatcher("/cart?cmd=show");
 				dis.forward(request, response);
 				break;
 		}

@@ -27,7 +27,6 @@
 <body>
 	<jsp:include page="../layout/header.jsp" />
 	<div class="page-container">
-		<form method="post" action="../user?cmd=cart">
 			<section class="cart">
 				<div class="cart_information">
 					<ul>
@@ -37,7 +36,7 @@
 					</ul>
 				</div>
 				<table class="cart_list">
-					<form>
+					<form method="post" action="${pageContext.request.contextPath}/cart?cmd=delete">
 						<thead>
 							<tr>
 								<td><input type="checkbox" id="selectAll"></td>
@@ -49,7 +48,7 @@
 						<tbody>
 						<c:forEach var="cart" items="${cartList}">
 							<tr class="cart_list_detail">
-								<td><input type="checkbox"></td>
+								<td><input type="checkbox" name="delcheckbox" value="${cart.id}"></td>
 								<td><img src="${pageContext.request.contextPath}/${cart.product_imgUrl_1}" alt="image"></td>
 								<td><a href="#">${cart.product_name}</a><span class="cart_list_america">[${cart.product_category}]</span>
 									<p>${cart.product_summary}</p> <span class="price">${cart.product_price}원</span></td>
@@ -72,13 +71,14 @@
 					</form>
 				</table>
 				<div class="cart_mainbtns">
-					<button class="cart_bigorderbtn left">쇼핑 계속하기</button>
+					<button onclick="location.href='${pageContext.request.contextPath}/product?cmd=info'" class="cart_bigorderbtn left">쇼핑 계속하기</button>
 					<button class="cart_bigorderbtn right">주문하기</button>
 				</div>
 			</section>
 			<script>
     document.addEventListener('DOMContentLoaded', function() {
         // 선택 상품 삭제 버튼
+        /*
         var deleteBtn = document.getElementById('deleteSelectedItemsBtn');
         deleteBtn.addEventListener('click', function() {
           var selectedItems = document.querySelectorAll('.cart_list_detail input[type="checkbox"]:checked');
@@ -88,7 +88,8 @@
             row.parentNode.removeChild(row);
           });
         });
-
+        */
+        
         // 전체 선택 체크박스
         var selectAllCheckbox = document.getElementById('selectAll');
         var selectItemsCheckbox = document.getElementById('selectItems');
@@ -110,11 +111,13 @@
           });
         });
 
-        // 쇼핑 계속하기
+        // 쇼핑
+        /*
         var continueBtn = document.querySelector('.cart_bigorderbtn.left');
         continueBtn.addEventListener('click', function() {
           alert('더 많은 여행상품들이 준비되어 있습니다!');
         });
+        */
     
         // 주문하기 버튼 이벤트 처리
         var orderBtn = document.querySelector('.cart_bigorderbtn.right');
@@ -124,7 +127,6 @@
     });
 
     </script>
-		</form>
 	</div>
 	<jsp:include page="../layout/footer.jsp" />
 </body>
