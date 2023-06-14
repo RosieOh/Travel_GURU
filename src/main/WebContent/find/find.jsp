@@ -19,9 +19,6 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <script src="https://kit.fontawesome.com/51db22a717.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
-    <style>
-        /* 기존의 CSS 스타일 */
-    </style>
 </head>
 <body>
     <jsp:include page="../layout/header.jsp" />
@@ -30,7 +27,9 @@
             <div class="login-form-container shadow">
                 <div class="login-form-right-side">
                     <div class="top-logo-wrap"></div>
-                    <h1>비밀번호 찾기</h1>
+                    <div class="h1-container">
+                    <h1>아이디 찾기</h1>
+                    </div>
                     <p>더 많은 서비스를 이용해보세요!</p>
                 </div>
                 <div class="login-form-left-side">
@@ -44,7 +43,7 @@
                         </div>
                     </div>
                     <div class="login-btn-wrap">
-                        <button class="login-btn" type="button" onclick="showPasswordPopup()">비밀번호 찾기</button>
+                        <button class="login-btn" type="button" onclick="showPasswordPopup()">아이디 찾기</button>
                     </div>
                 </div>
             </div>
@@ -58,7 +57,7 @@
             var email = emailInput.value;
 
             // 비밀번호 팝업에 메시지를 포함하여 보여주기
-            alert('해당 아이디의 비밀번호는: ' + email);
+            alert('해당 아이디는: ' + email);
         }
     </script>
     <jsp:include page="../layout/footer.jsp" />

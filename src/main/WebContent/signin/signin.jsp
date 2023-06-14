@@ -38,8 +38,8 @@
 			<div class="login-form-container shadow">
 				<div class="login-form-right-side">
 					<div class="top-logo-wrap"></div>
-					<h1>대한민국 최저가! 최고의 여행경험!</h1>
-					<p>#동아시아 #미주 #유럽 #동남아 #중동 #더추가?</p>
+					<h1>대한민국 최저가!<br> 최고의 여행경험!</h1>
+					<p>#동아시아 #미주 #유럽 #동남아 #중동 #남태평양</p>
 				</div>
 				<div class="login-form-left-side">
 					<div class="login-top-wrap">
@@ -58,7 +58,7 @@
 					</div>
 					<div class="login-btn-wrap">
 						<button class="login-btn" type="submit">로그인</button>
-						<a href="#">비밀번호를 잊으셨나요?</a>
+						<a href="../find/find.jsp">아이디를 잊으셨나요?</a>
 					</div>
 				</div>
 			</div>
