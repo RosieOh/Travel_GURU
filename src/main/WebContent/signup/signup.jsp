@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Travel_GURU</title>
+<title>Travel_GURU 회원가입</title>
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />

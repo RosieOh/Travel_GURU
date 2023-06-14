@@ -31,7 +31,7 @@
 </head>
 <jsp:include page="../layout/header.jsp" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>입주신청 약관</title>
+<title>상품 구매 약관</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -39,7 +39,7 @@
 
 	<main>
 		<form class="contract" action="signup.html">
-			<h1>입주신청 약관</h1>
+			<h1>상품 구매 약관</h1>
 			<br>
 			<div class="text">
 				&nbsp 가. 개인정보의 수집 및 이용 목적 국가공간정보포털은 다음의 목적을 위하여 개인정보를 처리합니다. 
